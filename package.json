@@ -1,14 +1,11 @@
 {
-  "name": "babel-webpack-tree-shaking",
+  "name": "webpack-developer-kit",
   "version": "1.0.0",
-  "description": "Tree-shaking example with Babel and Webpack",
-  "main": "dist/car.es2015.prod.bundle.js",
+  "description": "Super Light Dev Kit for Webpack Developers",
+  "main": "",
   "scripts": {
-    "webpack": "webpack --config webpack.config.js",
-    "webpack-prod": "webpack --config webpack.prod.config.js",
-    "webpack-es2015": "webpack --config webpack.es2015.config.js",
-    "webpack-es2015-prod": "webpack --config webpack.es2015.prod.config.js",
-    "serve": "http-server -a 0.0.0.0 -p 9000"
+    "build": "webpack --config webpack.config.js",
+    "debug":"node --inspect --debug-brk ./node_modules/webpack/bin/webpack.js --config webpack.config.js"
   },
   "repository": {
     "type": "git",
@@ -17,13 +14,15 @@
   "keywords": [
     "tree-shaking",
     "babel",
-    "webpack"
+    "webpack",
+    "toolkit",
+    "developer"
   ],
   "author": {
-    "name": "blacksonic",
-    "email": "soos.gabor86@gmail.com"
+    "name": "Sean Larkin",
+    "email": "sean.larkin@cuw.edu"
   },
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {},
   "devDependencies": {
     "babel-core": "^6.14.0",
