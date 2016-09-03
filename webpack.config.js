@@ -31,22 +31,15 @@ module.exports = {
     // Having it inline provides some nice conviences for debugging and development
     function() {
       var compiler = this;
-
+      
       compiler.plugin("compilation", function(compilation) {
-
-
         compilation.plugin("after-optimize-modules", function(modules) {
           // debugger;
         });
         compilation.plugin("after-optimize-chunks", function(chunks) {
           // debugger;
         })
-      
-
       });
-
-
-
     }
   ],
 
