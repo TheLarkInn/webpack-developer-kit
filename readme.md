@@ -18,9 +18,9 @@ There are two scripts that are setup already:
 	* paste provided link in Chrome (or Canary), and you will have the super incredible ChromeDevTools to step through your code for learning, exploration, and debugging. 
 
 ## Whats in the config?
-You will notice two things that are setup already for you that should assist in learning to rapidly write custom plugins and loaders. 
+You will notice **two things** that are setup already for you that should assist in learning to rapidly write custom plugins and loaders:
 
-1. An `inline` webpack plugin already defined. You can use an anon. function inside of the plugins array which will then allow you to `plugin` to the `compiler` instance (which is `this`):
+* An `inline` webpack plugin already defined. You can use an anon. function inside of the plugins array which will then allow you to `plugin` to the `compiler` instance (which is `this`):
  
 ```javascript
   plugins: [
@@ -40,7 +40,7 @@ You will notice two things that are setup already for you that should assist in 
   ]
 ```
 
-2. A `custom-loader` in the project root, and configuration for resolving it so you can use. Loaders by default automatically resolve from `node_modules` and therefore the `resolveLoader` property on the config allows you to have an `alias`'d resolve for that loader so you can work on it right in your project. (Much easier than creating a npm module, npm link and npm link module-name):
+* A `custom-loader` in the project root, and configuration for resolving it so you can use. Loaders by default automatically resolve from `node_modules` and therefore the `resolveLoader` property on the config allows you to have an `alias`'d resolve for that loader so you can work on it right in your project. (Much easier than creating a npm module, npm link and npm link module-name):
 
 ```javascript
 module.exports = loader;
