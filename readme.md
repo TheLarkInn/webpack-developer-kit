@@ -67,3 +67,5 @@ Submit an [issue](https://github.com/TheLarkInn/webpack-developer-kit/issues/new
 
 Please submit an issue to [the webpack core repository](https://github.com/webpack/webpack/issues/new). Most times, if you are trying to write a custom loader or plugin, one of the contributors or @Sokra, or myself will be able to provide you with guidance. Plus, if it is an undocumented, or poorly documented feature, then we will tag it as documentation and move a copy of it over to our [new docs page](https://github.com/webpack/webpack.io) (Or even better if you find out you can submit a PR to our doc page.)
 
+## Recognition
+I came up with this idea after forking [blacksonics](https://github.com/TheLarkInn/webpack-developer-kit/commits/master/readme.md?author=blacksonic) babel-treeshaking test repo. As I was debugging it, I found that "Hey, this would be pretty useful for people who want to write their own stuff". Thus you will see in initial git history, his mark on files like the `readme`.
