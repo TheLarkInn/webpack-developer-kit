@@ -57,10 +57,13 @@ function loader(source) {
 * [How to write a plugin](https://github.com/webpack/docs/wiki/How-to-write-a-plugin)
 * [Webpack Plugin API](https://webpack.github.io/docs/plugins.html)
 
-## Questions, issues, comments? 
-> Sean, I have a great suggestion for this repo, or notice a bug: 
+## Questions, issues, comments?
+
+> _Sean, I have a great suggestion for this repo, or notice a bug_
+
 Submit an [issue](https://github.com/TheLarkInn/webpack-developer-kit/issues/new) or a [pull request](https://github.com/TheLarkInn/webpack-developer-kit/compare) for the feature. If I don't respond in a few days, tag me @TheLarkInn or [tweet me](https://twitter.com/TheLarkInn) at the same name (I'm terrible with email notifications).
 
-> Sean, I want to know how to do this, or that with a loader or plugin
+> _Sean, I want to know how to do this, or that with a loader or plugin_
+
 Please submit an issue to [the webpack core repository](https://github.com/webpack/webpack/issues/new). Most times, if you are trying to write a custom loader or plugin, one of the contributors or @Sokra, or myself will be able to provide you with guidance. Plus, if it is an undocumented, or poorly documented feature, then we will tag it as documentation and move a copy of it over to our [new docs page](https://github.com/webpack/webpack.io) (Or even better if you find out you can submit a PR to our doc page.)
 
