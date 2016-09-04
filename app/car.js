@@ -1,4 +1,7 @@
 import { V8Engine } from './engine';
+import { ViewEncapsulation } from '@angular/core';
+
+console.log(ViewEncapsulation);
 
 class SportsCar {
   constructor(engine) {
