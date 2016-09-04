@@ -1,10 +1,11 @@
 'use strict';
 let webpack = require('webpack');
 let path = require('path');
+let HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: {
-    'car.prod': './app/car.js'
+    'car': './app/car.js'
   },
   output: {
     path: './dist',
@@ -31,7 +32,6 @@ module.exports = {
     // Having it inline provides some nice conviences for debugging and development
     function() {
       var compiler = this;
-      
       compiler.plugin("compilation", function(compilation) {
         compilation.plugin("after-optimize-modules", function(modules) {
           // debugger;
@@ -40,13 +40,16 @@ module.exports = {
           // debugger;
         })
       });
-    }
+    },
+    new HtmlWebpackPlugin({
+      template: './app/index.html'
+    })
   ],
 
   resolve: {
     root: [ path.join(__dirname, 'app') ],
     extensions: ['', '.js']
   },
-
+  debug: true,
   devtool: false
 };

@@ -4,8 +4,9 @@
   "description": "Super Light Dev Kit for Webpack Developers",
   "main": "",
   "scripts": {
+    "dev": "webpack-dev-server --inline --content-base build/",
     "build": "webpack --config webpack.config.js",
-    "debug":"node --inspect --debug-brk ./node_modules/webpack/bin/webpack.js --config webpack.config.js"
+    "debug": "node --inspect --debug-brk ./node_modules/webpack/bin/webpack.js --config webpack.config.js"
   },
   "repository": {
     "type": "git",
@@ -31,7 +32,9 @@
     "babel-preset-latest": "^6.14.0",
     "babili": "^0.0.4",
     "babili-webpack-plugin": "^0.0.2",
+    "html-webpack-plugin": "^2.22.0",
     "http-server": "^0.9.0",
-    "webpack": "^2.1.0-beta.21"
+    "webpack": "^2.1.0-beta.21",
+    "webpack-dev-server": "^2.1.0-beta.0"
   }
 }

@@ -10,8 +10,11 @@ Fork and clone this repo and then run `npm install`
 ## NPM Scripts
 There are two scripts that are setup already: 
 
+* `npm run dev`
+  * will run the same configuration instead with webpack-dev-server for live reload
+
 * `npm run build`
-	* will simply execute a webpack build in the repo
+  * will simply execute a webpack build in the repo
 
 * `npm run debug`
 	* will run the same build with node debugger.
