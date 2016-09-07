@@ -1,7 +1,11 @@
 'use strict';
-let webpack = require('webpack');
-let path = require('path');
-let HtmlWebpackPlugin = require('html-webpack-plugin');
+const webpack = require('webpack');
+const webpackSources = require('webpack-sources');
+const enhancedResolve = require('enhanced-resolve');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require('path');
+
+
 
 module.exports = {
   entry: {
@@ -38,7 +42,28 @@ module.exports = {
         });
         compilation.plugin("after-optimize-chunks", function(chunks) {
           // debugger;
-        })
+        });
+
+        // This is an example of using the webpack-sources library. Webpack has a set of Tapable classes all inheriting from MainTemplate and Template. 
+        // Any file in webpack/webpack/lib that ends in Template, is a custom plugin meant for applying the "shape" of the output bundle/chunk.
+        // webpack-sources is a collection of OOP Classes that lets you modify source content in a controlled manner. 
+        // There are lots of options so check out the npm modules. ====> https://github.com/webpack/webpack-sources <====
+        // 
+        compilation.moduleTemplate.plugin("render", function(source) {
+          // Important to note that any "render" event on a Template class must return the new source value. 
+
+          // The source.source() is unwrapping another source class (found in webpack-souraces),
+          // and returning the raw string. We can use that variable inside of other Source subclasses like ConcatSource. 
+          let content = source.source();
+
+          return new webpackSources.ConcatSource('/*I WILL BE IN FRONT OF THE MODULE TEMPLATE*/', content, '/*I WILL BE IN THE END OF THE MODULE TEMPLATE*/');
+        });
+
+        compilation.mainTemplate.plugin("render", function(source) {
+          let content = source.source();
+
+          return new webpackSources.ConcatSource('/*I WILL BE IN FRONT OF THE MAIN TEMPLATE*/', content, '/*I WILL BE IN THE END OF THE MAIN TEMPLATE*/');
+        });
       });
     },
     new HtmlWebpackPlugin({
