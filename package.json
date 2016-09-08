@@ -32,7 +32,7 @@
     "babel-preset-latest": "^6.14.0",
     "babili": "^0.0.4",
     "babili-webpack-plugin": "^0.0.2",
-    "enhanced-resolve": "^2.2.2",
+    "enhanced-resolve": "^2.3.0",
     "html-webpack-plugin": "^2.22.0",
     "http-server": "^0.9.0",
     "rimraf": "^2.5.4",
