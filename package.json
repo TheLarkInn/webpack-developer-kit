@@ -36,7 +36,7 @@
     "html-webpack-plugin": "^2.22.0",
     "http-server": "^0.9.0",
     "rimraf": "^2.5.4",
-    "webpack": "^2.1.0-beta.22",
+    "webpack": "^2.1.0-beta.25",
     "webpack-dev-server": "^2.1.0-beta.0",
     "webpack-sources": "^0.1.2"
   }

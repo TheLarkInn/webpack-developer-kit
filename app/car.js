@@ -10,4 +10,7 @@ class SportsCar {
   }
 }
 
-console.log(new SportsCar(new V8Engine()).toString());
+console.log(
+  new SportsCar(new V8Engine()).toString()
+);
+
