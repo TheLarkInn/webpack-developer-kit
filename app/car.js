@@ -1,6 +1,6 @@
 import { V8Engine } from './engine';
 
-class SportsCar {
+export class SportsCar {
   constructor(engine) {
     this.engine = engine;
   }

@@ -6,6 +6,8 @@
   "scripts": {
     "dev": "webpack-dev-server --inline --content-base build/",
     "build": "rimraf ./dist && webpack --config webpack.config.js",
+    "test:unit":"jest",
+    "test:e2e": "jasmine e2e.spec.js",
     "debug": "node --inspect --debug-brk ./node_modules/webpack/bin/webpack.js --config webpack.config.js"
   },
   "repository": {
@@ -24,6 +26,9 @@
     "email": "sean.larkin@cuw.edu"
   },
   "license": "MIT",
+  "jest":{
+    "rootDir":"./app/"
+  },
   "dependencies": {},
   "devDependencies": {
     "babel-core": "^6.14.0",
@@ -32,10 +37,15 @@
     "babel-preset-latest": "^6.14.0",
     "babili": "^0.0.4",
     "babili-webpack-plugin": "^0.0.2",
+    "cheerio": "0.22.0",
+    "chromedriver": "2.24.1",
     "enhanced-resolve": "^2.3.0",
     "html-webpack-plugin": "^2.22.0",
     "http-server": "^0.9.0",
+    "jasmine": "2.5.2",
+    "jest": "16.0.0",
     "rimraf": "^2.5.4",
+    "selenium-webdriver": "3.0.0-beta-3",
     "webpack": "^2.1.0-beta.25",
     "webpack-dev-server": "^2.1.0-beta.0",
     "webpack-sources": "^0.1.2"
