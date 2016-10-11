@@ -1,5 +1,4 @@
 const path = require('path');
-// const assert = require('yeoman-assert');
 const child = require('child_process');
 const webdriver = require('selenium-webdriver');
 const cheerio = require('cheerio');
