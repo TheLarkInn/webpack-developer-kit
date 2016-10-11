@@ -1,0 +1,12 @@
+{
+  "parser": "babel-eslint",
+  "env": {
+    "node": true
+  },
+  "rules": {
+    "indent": ["error", 2, { "SwitchCase": 1 }],
+    "semi": ["error", "always"],
+    "comma-dangle": ["error", "always-multiline"],
+    "quotes": ["error", "single", { "allowTemplateLiterals": true }]
+  }
+}
