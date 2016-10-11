@@ -6,8 +6,7 @@
   "scripts": {
     "dev": "webpack-dev-server --inline --content-base build/",
     "build": "rimraf ./dist && webpack --config webpack.config.js",
-    "test:unit": "jest app",
-    "test:e2e": "jest e2e.spec.js",
+    "test": "jest",
     "debug": "node --inspect --debug-brk ./node_modules/webpack/bin/webpack.js --config webpack.config.js"
   },
   "repository": {
