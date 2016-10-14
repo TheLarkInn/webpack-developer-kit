@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "webpack-dev-server --inline --content-base build/",
     "build": "rimraf ./dist && webpack --config webpack.config.js",
+    "lint": "eslint .",
     "test": "jest",
     "debug": "node --inspect --debug-brk ./node_modules/webpack/bin/webpack.js --config webpack.config.js"
   },
