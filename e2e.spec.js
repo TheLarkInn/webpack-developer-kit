@@ -21,7 +21,7 @@ describe('Webpack Dev Kit - Dev Script', () => {
     npmTask = child.spawn('npm', ['run', 'dev']);
     let run = false; //make sure to only call done once
     npmTask.stdout.on('data', (data) => {
-      //search for 'bundle valid' string to make sure it's finished running 
+      //search for 'bundle valid' string to make sure it's finished running
       let str = data.toString();
       if (str.indexOf('webpack: bundle is now VALID.') !== -1) {
         if (!run) {
@@ -44,7 +44,7 @@ describe('Webpack Dev Kit - Dev Script', () => {
       npmTask.kill();
       done();
     });
-  })
+  });
 
   it('should have the title "Webpack Developer Kit"', (done) => {
     expect($('title').text()).toBe('Webpack Developer Kit');
