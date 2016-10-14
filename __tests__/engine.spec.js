@@ -1,4 +1,4 @@
-import { V6Engine, V8Engine, getVersion } from './engine';
+import { V6Engine, V8Engine, getVersion } from '../app/engine';
 
 describe('Engine - ',() => {
   it('should have a v6 engine', () => {

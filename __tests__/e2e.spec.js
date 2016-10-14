@@ -1,19 +1,34 @@
 const path = require('path');
-// const assert = require('yeoman-assert');
 const child = require('child_process');
 const webdriver = require('selenium-webdriver');
 const cheerio = require('cheerio');
 
-const driver = new webdriver.Builder()
-  .forBrowser('chrome')
-  .build();
-
-const url = 'http://localhost:8080';
-
 jasmine.DEFAULT_TIMEOUT_INTERVAL = 15000; //increase timeout to allow webpack finish its thing
+
+const URL = 'http://localhost:8080';
 
 let $;
 let npmTask;
+let driver;
+
+if (process.env.SAUCE_USERNAME !== undefined) {
+  driver = new webdriver.Builder()
+    .usingServer('http://' + process.env.SAUCE_USERNAME + ':' + process.env.SAUCE_ACCESS_KEY + '@ondemand.saucelabs.com:80/wd/hub')
+    .withCapabilities({
+      'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
+      build: process.env.TRAVIS_BUILD_NUMBER,
+      username: process.env.SAUCE_USERNAME,
+      accessKey: process.env.SAUCE_ACCESS_KEY,
+      browserName: 'chrome',
+    })
+    .build();
+} else {
+  driver = new webdriver.Builder()
+    .withCapabilities({
+      browserName: 'chrome',
+    })
+    .build();
+}
 
 describe('Webpack Dev Kit - Dev Script', () => {
   beforeAll((done) => {
@@ -26,7 +41,7 @@ describe('Webpack Dev Kit - Dev Script', () => {
       if (str.indexOf('webpack: bundle is now VALID.') !== -1) {
         if (!run) {
           run = true;
-          driver.get(url);
+          driver.get(URL);
           driver.getPageSource()
             .then(page => {
               $ = cheerio.load(page);
