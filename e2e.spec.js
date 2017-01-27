@@ -4,9 +4,15 @@ const child = require('child_process');
 const webdriver = require('selenium-webdriver');
 const cheerio = require('cheerio');
 
+const chrome = require('selenium-webdriver/chrome');
+const driverPath = require('chromedriver').path;
+
+const service = new chrome.ServiceBuilder(driverPath).build();
+chrome.setDefaultService(service);
+
 const driver = new webdriver.Builder()
-  .forBrowser('chrome')
-  .build();
+    .withCapabilities(webdriver.Capabilities.chrome())
+    .build();
 
 const url = 'http://localhost:8080';
 
