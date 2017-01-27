@@ -1,3 +1,4 @@
+//from https://github.com/katopz/vscode-debug-nodejs-es6
 {
     "version": "0.2.0",
     "configurations": [
