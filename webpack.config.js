@@ -17,7 +17,7 @@ module.exports = {
   },
   module: {
     rules: [
-      // We are chianing the custom loader to babel loader.
+      // We are chaining the custom loader to babel loader.
       // Purely optional but know that the `first` loader in the chain (babel in this case)
       // must always return JavaScript (as it is then processed into the compilation)
       {
@@ -25,7 +25,7 @@ module.exports = {
         oneOf: [
           {
             loaders: [
-              'babel',
+              'babel-loader',
               'custom-loader',
             ],
           },
