@@ -47,7 +47,7 @@
     "http-server": "^0.9.0",
     "jasmine": "2.5.3",
     "jest": "18.1.0",
-    "rimraf": "^2.5.4",
+    "rimraf": "^2.6.1",
     "webpack": "^2.2.0",
     "webpack-dev-server": "^2.2.0",
     "webpack-sources": "^0.1.4"
