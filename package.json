@@ -40,7 +40,7 @@
     "babili": "^0.0.10",
     "babili-webpack-plugin": "^0.0.9",
     "cheerio": "0.22.0",
-    "chromedriver": "2.27.2",
+    "chromedriver": "2.29.0",
     "enhanced-resolve": "^3.0.3",
     "eslint": "^3.14.1",
     "html-webpack-plugin": "^2.26.0",
