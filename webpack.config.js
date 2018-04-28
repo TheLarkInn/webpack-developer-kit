@@ -13,7 +13,7 @@ const path = require('path');
  * intellisense for each class and instance
  * inside of your hooks and parameters
  *
- * Use @typedef and `import("webpack/lib/WhateverClass")` if you want to pull in a class and its properties from webpack!!!
+ * Use @typedef `import("webpack/lib/WhateverClass")` if you want to pull in a class and its properties from webpack!!!
  *
  */
 const welcome = 'webpack-developer-kit';
@@ -26,8 +26,10 @@ console.log(welcome);
 /** @typedef {import("webpack/lib/ContextModuleFactory")} ContextModuleFactory */
 /** @typedef {import("webpack/lib/Module")} Module */
 /** @typedef {import("webpack/lib/Chunk")} Chunk */
+/** @typedef {import("webpack/lib/Parser")} Parser */
 /** @typedef {import("webpack/lib/ChunkGroup")} ChunkGroup */
 /** @typedef {import("webpack/lib/Dependency")} Dependency */
+/** @typedef {import("@types/acorn").Node} Node */
 /** @typedef {{normalModuleFactory: NormalModuleFactory, contextModuleFactory: ContextModuleFactory, compilationDependencies: Set<Dependency>}} CompilationParams */
 
 module.exports = {
@@ -94,6 +96,8 @@ function compilationTapFunction(compilation, { normalModuleFactory, contextModul
     // debugger;
     cb();
   });
+
+  normalModuleFactory.hooks.parser.for('javascript/esm').tap('MyCustomInlinePlugin', parserTapFunction);
 }
 
 /**
@@ -102,7 +106,6 @@ function compilationTapFunction(compilation, { normalModuleFactory, contextModul
  */
 function modulesTapFunction(_modules) {
   // debugger;
-  // uncomment the statement above and run the debug script to explore the data in this function/hook/tap
 }
 
 /**
@@ -113,4 +116,27 @@ function modulesTapFunction(_modules) {
 function chunksTapFunction(_chunks, _chunkGroups) {
   // debugger;
   // uncomment the statement above and run the debug script to explore the data in this function/hook/tap
+}
+
+/**
+ *
+ * @param {Parser} parser
+ * @param {*} _parserOptions
+ */
+function parserTapFunction(parser, _parserOptions) {
+  parser.hooks.expression.for('this').tap('MyCustomInlinePlugin', parserExpressionTopLevelThisTapFunction);
+  // debugger;
+  // uncomment the statement above and run the debug script to explore the data in this function/hook/tap
+}
+
+/**
+ * When you tap into a parser hook, you are getting an event for when
+ * the parser comes across a sepcific expression/syntax. This function is broken out so you can see type
+ * support for the acorn.Node instance.
+ * @param {Node} _node
+ */
+function parserExpressionTopLevelThisTapFunction(_node) {
+  // debugger;
+  // console.log(_node.type);
+  // uncomment these statements above and run the debug script to explore the data in this function/hook/tap
 }

@@ -14,7 +14,13 @@
     "type": "git",
     "url": "git+https://github.com/blacksonic/babel-webpack-tree-shaking.git"
   },
-  "keywords": ["tree-shaking", "babel", "webpack", "toolkit", "developer"],
+  "keywords": [
+    "tree-shaking",
+    "babel",
+    "webpack",
+    "toolkit",
+    "developer"
+  ],
   "author": {
     "name": "Sean Larkin",
     "email": "sean.larkin@cuw.edu"
@@ -25,6 +31,7 @@
   },
   "dependencies": {},
   "devDependencies": {
+    "@types/acorn": "^4.0.3",
     "babel-core": "^6.22.1",
     "babel-eslint": "^7.1.1",
     "babel-loader": "^7.1.4",
@@ -49,7 +56,9 @@
     "webpack-sources": "^1.1.0"
   },
   "babel": {
-    "presets": ["es2015"],
+    "presets": [
+      "es2015"
+    ],
     "sourceMaps": true,
     "retainLines": true
   }
