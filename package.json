@@ -7,20 +7,14 @@
     "dev": "webpack-dev-server --inline --content-base build/",
     "build": "rimraf ./dist && webpack --config webpack.config.js",
     "lint": "eslint .",
-    "test:unit": "jest",
+    "test": "jest",
     "debug": "node --inspect --debug-brk ./node_modules/webpack/bin/webpack.js --config webpack.config.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/blacksonic/babel-webpack-tree-shaking.git"
   },
-  "keywords": [
-    "tree-shaking",
-    "babel",
-    "webpack",
-    "toolkit",
-    "developer"
-  ],
+  "keywords": ["tree-shaking", "babel", "webpack", "toolkit", "developer"],
   "author": {
     "name": "Sean Larkin",
     "email": "sean.larkin@cuw.edu"
@@ -55,9 +49,7 @@
     "webpack-sources": "^1.1.0"
   },
   "babel": {
-    "presets": [
-      "es2015"
-    ],
+    "presets": ["es2015"],
     "sourceMaps": true,
     "retainLines": true
   }
