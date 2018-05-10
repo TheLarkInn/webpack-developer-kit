@@ -1,6 +1,6 @@
 'use strict';
 // Plugins and extra supporting libs for webpack you might want to extend in your labratory! 😍
-// const webpack = require('webpack');
+const webpack = require('webpack');
 // const memoryFs = require('memory-fs');
 // const webpackSources = require('webpack-sources');
 // const enhancedResolve = require('enhanced-resolve');
@@ -75,7 +75,7 @@ module.exports = {
       template: './app/index.html',
     }),
   ],
-  devtool: false,
+  devtool: 'source-map',
   mode: 'none',
 };
 
