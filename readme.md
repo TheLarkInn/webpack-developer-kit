@@ -61,9 +61,8 @@ function loader(source) {
 
 ## Helpful resources:
 
-* [How to write a webpack loader](https://webpack.github.io/docs/how-to-write-a-loader.html)
-* [How to write a plugin](https://github.com/webpack/docs/wiki/How-to-write-a-plugin)
-* [Webpack Plugin API](https://webpack.github.io/docs/plugins.html)
+* [Writing a loader](https://webpack.js.org/contribute/writing-a-loader/)
+* [Writing a plugin](https://webpack.js.org/contribute/writing-a-plugin/)
 * [webpack-sources](https://github.com/webpack/webpack-sources)
 * [enhanced-resolve](https://github.com/webpack/enhanced-resolve)
 
